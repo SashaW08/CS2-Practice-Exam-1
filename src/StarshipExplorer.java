@@ -16,8 +16,9 @@ public class StarshipExplorer {
             aliens[x] = new Alien((int)(Math.random()*75+1), (int)(Math.random()*101));
         }
 
-        System.out.println("It is "+ checkEnergy() + " that some of the alien energies are the same");
-
+        displayAliens();
+        System.out.println("It is "+ checkEnergy() + " that some of the alien energy levels are the same");
+        System.out.println("This is the deciphered alien language: " + decipher(alienLanguage));
 
     }
 
@@ -45,8 +46,23 @@ public class StarshipExplorer {
                 }
             }
         }
-
         return yesornoyay;
+    }
+
+    public String decipher(String palienlanguage){
+
+        alienLanguage = palienlanguage;
+        String decodedstring = "";
+
+        while(palienlanguage.contains("*")){
+
+            String bob;
+            //bob = palienlanguage.substring(palienlanguage.indexOf("*"+1),palienlanguage.indexOf("*"+2));
+            bob = palienlanguage.substring(6,6);
+            decodedstring = decodedstring + bob;
+
+        }
+        return decodedstring;
     }
 
 }
