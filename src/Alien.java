@@ -30,7 +30,7 @@ public class Alien {
 
     public void printInfo(){
         System.out.println("Energy level: " + energyLevel);
-        System.out.println("Hostility index: " + hostilityIndex);
+        System.out.print(". Hostility index: " + hostilityIndex);
     }
 
 }
