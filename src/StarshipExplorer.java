@@ -11,13 +11,16 @@ public class StarshipExplorer {
     public StarshipExplorer(){
 
         System.out.println("Hello world! Good luck on your exams!");
+        System.out.println();
 
         for(int x=0; x<aliens.length; x++){
             aliens[x] = new Alien((int)(Math.random()*75+1), (int)(Math.random()*101));
         }
 
         displayAliens();
+        System.out.println();
         System.out.println("It is "+ checkEnergy() + " that some of the alien energy levels are the same");
+        System.out.println();
         System.out.println("This is the deciphered alien language: " + decipher(alienLanguage));
 
     }
@@ -53,13 +56,13 @@ public class StarshipExplorer {
 
         alienLanguage = palienlanguage;
         String decodedstring = "";
+        int astrixIndex = palienlanguage.indexOf("*");
 
         while(palienlanguage.contains("*")){
 
-            String bob;
-            //bob = palienlanguage.substring(palienlanguage.indexOf("*"+1),palienlanguage.indexOf("*"+2));
-            bob = palienlanguage.substring(6,6);
-            decodedstring = decodedstring + bob;
+            decodedstring = decodedstring + palienlanguage.charAt(astrixIndex + 1);
+            palienlanguage = palienlanguage.substring(astrixIndex + 1);
+            astrixIndex = palienlanguage.indexOf("*");
 
         }
         return decodedstring;
